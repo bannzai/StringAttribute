@@ -16,7 +16,7 @@ import UIKit
 
 public enum StringAttribute {
     case font(UIFont)
-    case paragraph(NSParagraphStyle)
+    case paragraph(Paragraphable)
     case foregroundColor(UIColor)
     case backgroundColor(UIColor)
     case ligature(Float) // to NSNumber
@@ -82,7 +82,7 @@ public enum StringAttribute {
         }
     }
     
-    var attribute: [String: Any] {
+    var attributes: [String: Any] {
         switch self {
         case .font(let font):
             return [key: font]
@@ -127,6 +127,28 @@ public enum StringAttribute {
         }
     }
 }
+
+public struct Paragraph {
+    public let styles: [ParagraphStyle]
+    public init(styles: [ParagraphStyle]) {
+       self.styles = styles
+    }
+}
+
+public protocol Paragraphable {
+    func style() -> NSParagraphStyle
+}
+extension NSParagraphStyle: Paragraphable {
+    public func style() -> NSParagraphStyle {
+        return self
+    }
+}
+extension Paragraph: Paragraphable {
+    public func style() -> NSParagraphStyle {
+        
+    }
+}
+
 
 public enum ParagraphStyle {
     case lineSpacing(CGFloat)
@@ -196,21 +218,27 @@ public struct ParagraphStyleBuilder {
     }
 }
 
+public extension NSAttributedString {
+    public func apply(for attribute: StringAttribute) -> NSAttributedString {
+        return apply(for: attribute, in: Range(uncheckedBounds: (lower: 0, upper: length)))
+    }
+    
+    public func apply(for attributes: [StringAttribute]) -> NSAttributedString {
+        return apply(for: attributes, in: Range(uncheckedBounds: (lower: 0, upper: length)))
+    }
+    
+    public func apply(for attribute: StringAttribute, in range: Range<Int>) -> NSAttributedString {
+        return StringStyleBuilder(attributedString: self).apply(for: attribute, in: range).build()
+    }
+    
+    public func apply(for attributes: [StringAttribute], in range: Range<Int>) -> NSAttributedString {
+        return StringStyleBuilder(attributedString: self).apply(for: attributes, in: range).build()
+    }
+}
+
 public extension String {
-    public func apply(for attribute: StringAttribute) -> StringStyleBuilder {
-        return apply(for: attribute, in: Range(uncheckedBounds: (lower: 0, upper: characters.count)))
-    }
-    
-    public func apply(for attributes: [StringAttribute]) -> StringStyleBuilder {
-        return apply(for: attributes, in: Range(uncheckedBounds: (lower: 0, upper: characters.count)))
-    }
-    
-    public func apply(for attribute: StringAttribute, in range: Range<Int>) -> StringStyleBuilder {
-        return StringStyleBuilder(string: self).apply(for: attribute, in: range)
-    }
-    
-    public func apply(for attributes: [StringAttribute], in range: Range<Int>) -> StringStyleBuilder {
-        return StringStyleBuilder(string: self).apply(for: attributes, in: range)
+    public func attributed() -> NSAttributedString {
+        return NSAttributedString(string: self)
     }
 }
 
@@ -235,15 +263,13 @@ public struct StringStyleBuilder {
     
     public func apply(for attribute: StringAttribute, in range: Range<Int>) -> StringStyleBuilder {
         let nsRange = NSMakeRange(range.lowerBound, range.upperBound - range.lowerBound)
-        attributedString.addAttributes(attribute.attribute, range: nsRange)
+        attributedString.addAttributes(attribute.attributes, range: nsRange)
         return self
     }
     
     public func apply(for attributes: [StringAttribute], in range: Range<Int>) -> StringStyleBuilder {
         let nsRange = NSMakeRange(range.lowerBound, range.upperBound - range.lowerBound)
-        attributes.forEach {
-            attributedString.addAttributes($0.attribute, range: nsRange)
-        }
+        attributes.forEach { attributedString.addAttributes($0.attributes, range: nsRange) }
         return self
     }
     
