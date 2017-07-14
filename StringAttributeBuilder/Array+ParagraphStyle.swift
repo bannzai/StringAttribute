@@ -10,6 +10,6 @@ import UIKit
 
 extension Array where Element == ParagraphStyle {
     func paragraphStyle() -> NSParagraphStyle {
-        fatalError()
+        return ParagraphStyleBuilder().append(for: self).build()
     }
 }
