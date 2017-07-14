@@ -10,6 +10,7 @@ import Foundation
 
 public struct Paragraph {
     public let styles: [ParagraphStyle]
+    
     public init(styles: [ParagraphStyle]) {
        self.styles = styles
     }
