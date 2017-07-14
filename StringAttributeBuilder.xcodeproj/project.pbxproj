@@ -11,6 +11,14 @@
 		6C4053921F14833A00A3C228 /* StringAttributeBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4053911F14833A00A3C228 /* StringAttributeBuilderTests.swift */; };
 		6C4053941F14833A00A3C228 /* StringAttributeBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C4053861F14833A00A3C228 /* StringAttributeBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C40539E1F14834B00A3C228 /* StringAttributeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C40539D1F14834B00A3C228 /* StringAttributeBuilder.swift */; };
+		BAB739641F18CFC700F6AF97 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB739631F18CFC700F6AF97 /* Paragraph.swift */; };
+		BAB739661F18CFE800F6AF97 /* ParagraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB739651F18CFE800F6AF97 /* ParagraphStyle.swift */; };
+		BAB739681F18D0C000F6AF97 /* Paragraphable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB739671F18D0C000F6AF97 /* Paragraphable.swift */; };
+		BAB7396A1F18D0D900F6AF97 /* Array+ParagraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB739691F18D0D900F6AF97 /* Array+ParagraphStyle.swift */; };
+		BAB7396C1F18EC8D00F6AF97 /* ParagraphStyleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB7396B1F18EC8D00F6AF97 /* ParagraphStyleBuilder.swift */; };
+		BAB7396E1F18ECCB00F6AF97 /* String+Attributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB7396D1F18ECCB00F6AF97 /* String+Attributed.swift */; };
+		BAB739701F18ECFA00F6AF97 /* StringAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB7396F1F18ECFA00F6AF97 /* StringAttribute.swift */; };
+		BAB739721F18ED5600F6AF97 /* NSAttributedString+StringAttributeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB739711F18ED5600F6AF97 /* NSAttributedString+StringAttributeBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +39,14 @@
 		6C4053911F14833A00A3C228 /* StringAttributeBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAttributeBuilderTests.swift; sourceTree = "<group>"; };
 		6C4053931F14833A00A3C228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C40539D1F14834B00A3C228 /* StringAttributeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributeBuilder.swift; sourceTree = "<group>"; };
+		BAB739631F18CFC700F6AF97 /* Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
+		BAB739651F18CFE800F6AF97 /* ParagraphStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphStyle.swift; sourceTree = "<group>"; };
+		BAB739671F18D0C000F6AF97 /* Paragraphable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraphable.swift; sourceTree = "<group>"; };
+		BAB739691F18D0D900F6AF97 /* Array+ParagraphStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ParagraphStyle.swift"; sourceTree = "<group>"; };
+		BAB7396B1F18EC8D00F6AF97 /* ParagraphStyleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphStyleBuilder.swift; sourceTree = "<group>"; };
+		BAB7396D1F18ECCB00F6AF97 /* String+Attributed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Attributed.swift"; sourceTree = "<group>"; };
+		BAB7396F1F18ECFA00F6AF97 /* StringAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttribute.swift; sourceTree = "<group>"; };
+		BAB739711F18ED5600F6AF97 /* NSAttributedString+StringAttributeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+StringAttributeBuilder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +89,17 @@
 		6C4053851F14833A00A3C228 /* StringAttributeBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				6C4053861F14833A00A3C228 /* StringAttributeBuilder.h */,
-				6C4053871F14833A00A3C228 /* Info.plist */,
+				BAB739631F18CFC700F6AF97 /* Paragraph.swift */,
 				6C40539D1F14834B00A3C228 /* StringAttributeBuilder.swift */,
+				BAB7396F1F18ECFA00F6AF97 /* StringAttribute.swift */,
+				BAB7396D1F18ECCB00F6AF97 /* String+Attributed.swift */,
+				BAB739711F18ED5600F6AF97 /* NSAttributedString+StringAttributeBuilder.swift */,
+				6C4053871F14833A00A3C228 /* Info.plist */,
+				6C4053861F14833A00A3C228 /* StringAttributeBuilder.h */,
+				BAB7396B1F18EC8D00F6AF97 /* ParagraphStyleBuilder.swift */,
+				BAB739651F18CFE800F6AF97 /* ParagraphStyle.swift */,
+				BAB739671F18D0C000F6AF97 /* Paragraphable.swift */,
+				BAB739691F18D0D900F6AF97 /* Array+ParagraphStyle.swift */,
 			);
 			path = StringAttributeBuilder;
 			sourceTree = "<group>";
@@ -200,7 +224,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAB7396C1F18EC8D00F6AF97 /* ParagraphStyleBuilder.swift in Sources */,
+				BAB739681F18D0C000F6AF97 /* Paragraphable.swift in Sources */,
+				BAB739641F18CFC700F6AF97 /* Paragraph.swift in Sources */,
+				BAB739701F18ECFA00F6AF97 /* StringAttribute.swift in Sources */,
+				BAB739661F18CFE800F6AF97 /* ParagraphStyle.swift in Sources */,
 				6C40539E1F14834B00A3C228 /* StringAttributeBuilder.swift in Sources */,
+				BAB7396E1F18ECCB00F6AF97 /* String+Attributed.swift in Sources */,
+				BAB739721F18ED5600F6AF97 /* NSAttributedString+StringAttributeBuilder.swift in Sources */,
+				BAB7396A1F18D0D900F6AF97 /* Array+ParagraphStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +438,7 @@
 				6C4053991F14833A00A3C228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C40539A1F14833A00A3C228 /* Build configuration list for PBXNativeTarget "StringAttributeBuilderTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +447,7 @@
 				6C40539C1F14833A00A3C228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
