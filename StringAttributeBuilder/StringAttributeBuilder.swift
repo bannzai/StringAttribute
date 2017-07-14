@@ -234,11 +234,11 @@ public extension NSAttributedString {
     }
     
     public func apply(for attribute: StringAttribute, in range: Range<Int>) -> NSAttributedString {
-        return StringStyleBuilder(attributedString: self).apply(for: attribute, in: range).build()
+        return StringAttributeBuilder(attributedString: self).apply(for: attribute, in: range).build()
     }
     
     public func apply(for attributes: [StringAttribute], in range: Range<Int>) -> NSAttributedString {
-        return StringStyleBuilder(attributedString: self).apply(for: attributes, in: range).build()
+        return StringAttributeBuilder(attributedString: self).apply(for: attributes, in: range).build()
     }
 }
 
@@ -248,7 +248,7 @@ public extension String {
     }
 }
 
-public struct StringStyleBuilder {
+public struct StringAttributeBuilder {
     fileprivate let attributedString: NSMutableAttributedString
     
     public init(string: String) {
@@ -259,21 +259,21 @@ public struct StringStyleBuilder {
         self.attributedString = NSMutableAttributedString(attributedString: attributedString)
     }
     
-    public func apply(for attribute: StringAttribute) -> StringStyleBuilder {
+    public func apply(for attribute: StringAttribute) -> StringAttributeBuilder {
         return apply(for: attribute, in: Range(uncheckedBounds: (lower: 0, upper: attributedString.length)))
     }
     
-    public func apply(for attributes: [StringAttribute]) -> StringStyleBuilder {
+    public func apply(for attributes: [StringAttribute]) -> StringAttributeBuilder {
         return apply(for: attributes, in: Range(uncheckedBounds: (lower: 0, upper: attributedString.length)))
     }
     
-    public func apply(for attribute: StringAttribute, in range: Range<Int>) -> StringStyleBuilder {
+    public func apply(for attribute: StringAttribute, in range: Range<Int>) -> StringAttributeBuilder {
         let nsRange = NSMakeRange(range.lowerBound, range.upperBound - range.lowerBound)
         attributedString.addAttributes(attribute.attributes, range: nsRange)
         return self
     }
     
-    public func apply(for attributes: [StringAttribute], in range: Range<Int>) -> StringStyleBuilder {
+    public func apply(for attributes: [StringAttribute], in range: Range<Int>) -> StringAttributeBuilder {
         let nsRange = NSMakeRange(range.lowerBound, range.upperBound - range.lowerBound)
         attributes.forEach { attributedString.addAttributes($0.attributes, range: nsRange) }
         return self
