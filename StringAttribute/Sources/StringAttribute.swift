@@ -13,23 +13,22 @@ public enum StringAttribute {
     case paragraph(Paragraphable)
     case foregroundColor(UIColor)
     case backgroundColor(UIColor)
-    case ligature(Float) // to NSNumber
-    case kern(Float) // to NSNumber
-    case strikethrough(NSUnderlineStyle) // to NSNumber
-    case underline(NSUnderlineStyle) // to NSNumber
+    case ligature(Float) 
+    case kern(Float) 
+    case strikethrough(NSUnderlineStyle)
+    case underline(NSUnderlineStyle) 
     case strokeColor(UIColor)
     case strokeWidth(Float)
     case shadow(NSShadow)
-    case textEffect // is only NSTextEffectLetterpressStyle
+    case textEffect 
     case attachment(NSAttributedString)
     case link(URL)
-    case baselineOffset(Float) // to NSNumber
+    case baselineOffset(Float) 
     case underlineColor(UIColor)
     case strikethroughColor(UIColor)
-    case obliqueness(Float) // to NSNumber
-    case expansion(Float) // to NSNumber
-    case writingDirection(Int) // to NSNumber
-    //    case verticalGlyphForm // ios is not working, key is NSVerticalGlyphFormAttributeName
+    case obliqueness(Float) 
+    case expansion(Float) 
+    case writingDirection(Int) 
     
     var key: String {
         switch self {
@@ -81,7 +80,7 @@ public enum StringAttribute {
         case .font(let font):
             return [key: font]
         case .paragraph(let paragraph):
-            return [key: paragraph]
+            return [key: paragraph.style()]
         case .foregroundColor(let foregroundColor):
             return [key: foregroundColor]
         case .backgroundColor(let backgroundColor):
