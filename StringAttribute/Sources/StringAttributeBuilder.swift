@@ -9,13 +9,6 @@
 import Foundation
 import UIKit
 
-// reference to
-// https://thinkit.co.jp/story/2014/09/30/5204
-// http://qiita.com/inuscript/items/fdfa69515e74506134a3
-// http://tea-leaves.jp/home/ja/article/1374929836
-
-
-
 public struct StringAttributeBuilder {
     fileprivate let attributedString: NSMutableAttributedString
     
@@ -44,6 +37,24 @@ public struct StringAttributeBuilder {
     public func apply(with attributes: [StringAttribute], in range: Range<Int>) -> StringAttributeBuilder {
         let nsRange = NSMakeRange(range.lowerBound, range.upperBound - range.lowerBound)
         attributes.forEach { attributedString.addAttributes($0.attributes, range: nsRange) }
+        return self
+    }
+    
+    public func apply(with attribute: StringAttribute, for string: String, to position: StringMatchPositionType) -> StringAttributeBuilder {
+        position
+            .convertRanges(
+                from: attributedString.string.ranges(of: string)
+            )
+            .forEach { (range) in
+                attributedString.addAttributes(attribute.attributes, range: range)
+        }
+        return self
+    }
+    
+    public func apply(with attributes: [StringAttribute], for string: String, to position: StringMatchPositionType) -> StringAttributeBuilder {
+        attributes.forEach {
+            _ = apply(with: $0, for: string, to: position)
+        }
         return self
     }
     

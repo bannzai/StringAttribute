@@ -10,3 +10,8 @@ var str = "Hello, playground"
     .apply(with: .font(.boldSystemFont(ofSize: 15)))
     .apply(with: .foregroundColor(.red))
 
+
+let range = ("hoge" as NSString).range(of: "unko")
+range.location
+NSNotFound
+

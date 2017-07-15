@@ -19,6 +19,8 @@
 		BAEC17841F18FA0400501BCF /* String+Attributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC177B1F18FA0400501BCF /* String+Attributed.swift */; };
 		BAEC17851F18FA0400501BCF /* StringAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC177C1F18FA0400501BCF /* StringAttribute.swift */; };
 		BAEC17861F18FA0400501BCF /* StringAttributeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC177D1F18FA0400501BCF /* StringAttributeBuilder.swift */; };
+		BAEC17881F19A2FD00501BCF /* String+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC17871F19A2FD00501BCF /* String+NSRange.swift */; };
+		BAEC178A1F19C85700501BCF /* StringMatchPositionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC17891F19C85700501BCF /* StringMatchPositionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		BAEC177B1F18FA0400501BCF /* String+Attributed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Attributed.swift"; sourceTree = "<group>"; };
 		BAEC177C1F18FA0400501BCF /* StringAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttribute.swift; sourceTree = "<group>"; };
 		BAEC177D1F18FA0400501BCF /* StringAttributeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributeBuilder.swift; sourceTree = "<group>"; };
+		BAEC17871F19A2FD00501BCF /* String+NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NSRange.swift"; sourceTree = "<group>"; };
+		BAEC17891F19C85700501BCF /* StringMatchPositionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatchPositionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +119,10 @@
 				BAEC17791F18FA0400501BCF /* ParagraphStyle.swift */,
 				BAEC177A1F18FA0400501BCF /* ParagraphStyleBuilder.swift */,
 				BAEC177B1F18FA0400501BCF /* String+Attributed.swift */,
+				BAEC17871F19A2FD00501BCF /* String+NSRange.swift */,
 				BAEC177C1F18FA0400501BCF /* StringAttribute.swift */,
 				BAEC177D1F18FA0400501BCF /* StringAttributeBuilder.swift */,
+				BAEC17891F19C85700501BCF /* StringMatchPositionType.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -179,7 +185,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "廣瀬雄大";
+				ORGANIZATIONNAME = Yudai.Hirose;
 				TargetAttributes = {
 					BAEC17591F18F9D700501BCF = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -231,10 +237,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAEC178A1F19C85700501BCF /* StringMatchPositionType.swift in Sources */,
 				BAEC17831F18FA0400501BCF /* ParagraphStyleBuilder.swift in Sources */,
 				BAEC17811F18FA0400501BCF /* Paragraphable.swift in Sources */,
 				BAEC17801F18FA0400501BCF /* Paragraph.swift in Sources */,
 				BAEC17851F18FA0400501BCF /* StringAttribute.swift in Sources */,
+				BAEC17881F19A2FD00501BCF /* String+NSRange.swift in Sources */,
 				BAEC177E1F18FA0400501BCF /* Array+ParagraphStyle.swift in Sources */,
 				BAEC17821F18FA0400501BCF /* ParagraphStyle.swift in Sources */,
 				BAEC17841F18FA0400501BCF /* String+Attributed.swift in Sources */,
@@ -442,6 +450,7 @@
 				BAEC17701F18F9D700501BCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAEC17711F18F9D700501BCF /* Build configuration list for PBXNativeTarget "StringAttributeTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +459,7 @@
 				BAEC17731F18F9D700501BCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
