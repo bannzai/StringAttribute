@@ -11,7 +11,33 @@ var str = "Hello, playground"
     .apply(with: .foregroundColor(.red))
 
 
-let range = ("hoge" as NSString).range(of: "unko")
-range.location
-NSNotFound
+"Hello playgrounds, Hello world"
+    .attributed()
+    .apply(with: .foregroundColor(.blue), for: "Hello", to: .all)
 
+
+
+extension String {
+    private func toNSRange(for range: Range<String.Index>) -> NSRange {
+        let lower = String.UTF16View.Index(range.lowerBound, within: utf16)
+        let upper = String.UTF16View.Index(range.upperBound, within: utf16)
+        return NSRange(
+            location: utf16.startIndex.distance(to: lower),
+            length: utf16.distance(from: lower, to: upper)
+        )
+    }
+    
+    func ranges(of string: String) -> [NSRange] {
+        var decreasingSelf = self
+        var ranges: [NSRange] = []
+        
+        while let subStringRange = decreasingSelf.range(of: string) {
+            ranges.append(toNSRange(for: subStringRange))
+            decreasingSelf = decreasingSelf.substring(with: subStringRange)
+        }
+        
+        return ranges
+    }
+}
+let range = "Hello playgrounds, Hello world".ranges(of: "Hello")
+range.forEach { print($0.location) }

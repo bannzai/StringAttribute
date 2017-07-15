@@ -9,18 +9,23 @@
 import Foundation
 
 extension String {
-    func range(of string: String) -> NSRange {
-        return (self as NSString).range(of: string)
+    private func toNSRange(for range: Range<String.Index>) -> NSRange {
+        let lower = String.UTF16View.Index(range.lowerBound, within: utf16)
+        let upper = String.UTF16View.Index(range.upperBound, within: utf16)
+        return NSRange(
+            location: utf16.startIndex.distance(to: lower),
+            length: utf16.distance(from: lower, to: upper)
+        )
     }
     
     func ranges(of string: String) -> [NSRange] {
+        var decreasingSelf = self
         var ranges: [NSRange] = []
-        var range: NSRange
         
-        repeat {
-            range = (self as NSString).range(of: string)
-            ranges.append(range)
-        } while range.location == NSNotFound
+        while let subStringRange = decreasingSelf.range(of: string) {
+            ranges.append(toNSRange(for: subStringRange))
+            decreasingSelf = decreasingSelf.substring(with: subStringRange)
+        }
         
         return ranges
     }

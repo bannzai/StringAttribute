@@ -25,11 +25,11 @@ public extension NSAttributedString {
         return StringAttributeBuilder(attributedString: self).apply(with: attributes, in: range).build()
     }
     
-    public func apply(with attribute: StringAttribute, for string: String, to position: StringMatchPositionType) -> StringAttributeBuilder {
-        return StringAttributeBuilder(attributedString: self).apply(with: attribute, for: string, to: position)
+    public func apply(with attribute: StringAttribute, for string: String, to position: StringMatchPositionType) -> NSAttributedString {
+        return StringAttributeBuilder(attributedString: self).apply(with: attribute, for: string, to: position).build()
     }
     
-    public func apply(with attributes: [StringAttribute], for string: String, to position: StringMatchPositionType) -> StringAttributeBuilder {
-        return StringAttributeBuilder(attributedString: self).apply(with: attributes, for: string, to: position)
+    public func apply(with attributes: [StringAttribute], for string: String, to position: StringMatchPositionType) -> NSAttributedString {
+        return StringAttributeBuilder(attributedString: self).apply(with: attributes, for: string, to: position).build()
     }
 }
