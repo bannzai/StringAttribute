@@ -9,19 +9,19 @@
 import Foundation
 
 public extension NSAttributedString {
-    public func apply(for attribute: StringAttribute) -> NSAttributedString {
-        return apply(for: attribute, in: Range(uncheckedBounds: (lower: 0, upper: length)))
+    public func apply(with attribute: StringAttribute) -> NSAttributedString {
+        return apply(with: attribute, in: Range(uncheckedBounds: (lower: 0, upper: length)))
     }
     
-    public func apply(for attributes: [StringAttribute]) -> NSAttributedString {
-        return apply(for: attributes, in: Range(uncheckedBounds: (lower: 0, upper: length)))
+    public func apply(with attributes: [StringAttribute]) -> NSAttributedString {
+        return apply(with: attributes, in: Range(uncheckedBounds: (lower: 0, upper: length)))
     }
     
-    public func apply(for attribute: StringAttribute, in range: Range<Int>) -> NSAttributedString {
-        return StringAttributeBuilder(attributedString: self).apply(for: attribute, in: range).build()
+    public func apply(with attribute: StringAttribute, in range: Range<Int>) -> NSAttributedString {
+        return StringAttributeBuilder(attributedString: self).apply(with: attribute, in: range).build()
     }
     
-    public func apply(for attributes: [StringAttribute], in range: Range<Int>) -> NSAttributedString {
-        return StringAttributeBuilder(attributedString: self).apply(for: attributes, in: range).build()
+    public func apply(with attributes: [StringAttribute], in range: Range<Int>) -> NSAttributedString {
+        return StringAttributeBuilder(attributedString: self).apply(with: attributes, in: range).build()
     }
 }
