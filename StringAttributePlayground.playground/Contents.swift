@@ -11,9 +11,9 @@ var str = "Hello, playground"
     .apply(with: .foregroundColor(.red))
 
 
-"Hello playgrounds, Hello world"
-    .attributed()
-    .apply(with: .foregroundColor(.blue), for: "Hello", to: .all)
+//"Hello playgrounds, Hello world"
+//    .attributed()
+//    .apply(with: .foregroundColor(.blue), for: "Hello", to: .all)
 
 
 
@@ -32,8 +32,11 @@ extension String {
         var ranges: [NSRange] = []
         
         while let subStringRange = decreasingSelf.range(of: string) {
-            ranges.append(toNSRange(for: subStringRange))
-            decreasingSelf = decreasingSelf.substring(with: subStringRange)
+            var nsRange = toNSRange(for: subStringRange)
+            nsRange.location += utf16.count - decreasingSelf.utf16.count
+            ranges.append(nsRange)
+            
+            decreasingSelf.removeSubrange(subStringRange)
         }
         
         return ranges
