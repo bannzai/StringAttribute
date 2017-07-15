@@ -55,8 +55,11 @@ public struct ParagraphStyleBuilder {
                 paragraphStyle.paragraphSpacingBefore = paragraphSpacingBefore
             case .hyphenationFactor(let hyphenationFactor):
                 paragraphStyle.hyphenationFactor = hyphenationFactor
+            case .complex(let paragraphStyles):
+                _ = append(for: paragraphStyles)
             }
         }
+        
         return self
     }
     

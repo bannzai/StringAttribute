@@ -5,12 +5,11 @@ import StringAttribute
 
 var str = "Hello, playground"
 
-let paragraphStyle = ParagraphStyle(
 "Hello, playground\n Yeaaaa"
     .attributed()
     .apply(with: .font(.boldSystemFont(ofSize: 23)))
     .apply(with: .foregroundColor(.red))
-
+    .apply(with: .paragraph(ParagraphStyle.lineSpacing(10)))
 
 "Hello playgrounds, Hello world"
     .attributed()

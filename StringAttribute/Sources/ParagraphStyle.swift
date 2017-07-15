@@ -22,5 +22,11 @@ public enum ParagraphStyle {
     case lineHeightMultiple(CGFloat)
     case paragraphSpacingBefore(CGFloat)
     case hyphenationFactor(Float)
+    
+    indirect case complex([ParagraphStyle])
+    
+    public func style() -> NSParagraphStyle {
+        return ParagraphStyleBuilder().append(for: self).build()
+    }
 }
 

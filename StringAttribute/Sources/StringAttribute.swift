@@ -10,7 +10,7 @@ import UIKit
 
 public enum StringAttribute {
     case font(UIFont)
-    case paragraph(Paragraphable)
+    case paragraph(ParagraphStyle)
     case foregroundColor(UIColor)
     case backgroundColor(UIColor)
     case ligature(Float) 
