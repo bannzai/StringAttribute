@@ -40,6 +40,26 @@ public struct StringAttributeBuilder {
         return self
     }
     
+    public func apply(with attribute: StringAttribute, in countableRange: CountableRange<Int>) -> StringAttributeBuilder {
+        let range: Range<Int> = Range(uncheckedBounds: (countableRange.lowerBound, countableRange.upperBound))
+        return apply(with: attribute, in: range)
+    }
+    
+    public func apply(with attributes: [StringAttribute], in countableRange: CountableRange<Int>) -> StringAttributeBuilder {
+        let range: Range<Int> = Range(uncheckedBounds: (countableRange.lowerBound, countableRange.upperBound))
+        return apply(with: attributes, in: range)
+    }
+    
+    public func apply(with attribute: StringAttribute, in closeRange: ClosedRange<Int>) -> StringAttributeBuilder {
+        let range: Range<Int> = Range(uncheckedBounds: (closeRange.lowerBound, closeRange.upperBound))
+        return apply(with: attribute, in: range)
+    }
+    
+    public func apply(with attributes: [StringAttribute], in closeRange: ClosedRange<Int>) -> StringAttributeBuilder {
+        let range: Range<Int> = Range(uncheckedBounds: (closeRange.lowerBound, closeRange.upperBound))
+        return apply(with: attributes, in: range)
+    }
+    
     public func apply(with attribute: StringAttribute, for string: String, to position: StringMatchPositionType) -> StringAttributeBuilder {
         position
             .convertRanges(

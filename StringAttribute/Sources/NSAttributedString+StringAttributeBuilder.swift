@@ -25,11 +25,53 @@ public extension NSAttributedString {
         return StringAttributeBuilder(attributedString: self).apply(with: attributes, in: range).build()
     }
     
-    public func apply(with attribute: StringAttribute, for string: String, to position: StringMatchPositionType) -> NSAttributedString {
+    public func apply(with attribute: StringAttribute, in range: CountableRange<Int>) -> NSAttributedString {
+        return StringAttributeBuilder(attributedString: self).apply(with: attribute, in: range).build()
+    }
+    
+    public func apply(with attributes: [StringAttribute], in range: CountableRange<Int>) -> NSAttributedString {
+        return StringAttributeBuilder(attributedString: self).apply(with: attributes, in: range).build()
+    }
+    
+    public func apply(with attribute: StringAttribute, in range: ClosedRange<Int>) -> NSAttributedString {
+        return StringAttributeBuilder(attributedString: self).apply(with: attribute, in: range).build()
+    }
+    
+    public func apply(with attributes: [StringAttribute], in range: ClosedRange<Int>) -> NSAttributedString {
+        return StringAttributeBuilder(attributedString: self).apply(with: attributes, in: range).build()
+    }
+    
+    public func apply(with attribute: StringAttribute, for string: String, to position: StringMatchPositionType = .all) -> NSAttributedString {
         return StringAttributeBuilder(attributedString: self).apply(with: attribute, for: string, to: position).build()
     }
     
-    public func apply(with attributes: [StringAttribute], for string: String, to position: StringMatchPositionType) -> NSAttributedString {
+    public func apply(with attributes: [StringAttribute], for string: String, to position: StringMatchPositionType = .all) -> NSAttributedString {
         return StringAttributeBuilder(attributedString: self).apply(with: attributes, for: string, to: position).build()
+    }
+}
+
+public extension NSAttributedString {
+    public func append(with image: UIImage?, bounds: CGRect = .zero) -> NSAttributedString {
+        let mutableAttributedString = NSMutableAttributedString(attributedString: self)
+        
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = bounds
+        
+        mutableAttributedString.append(NSAttributedString(attachment: attachment))
+        
+        return mutableAttributedString
+    }
+    
+    public func insert(with image: UIImage?, bounds: CGRect = .zero, at index: Int) -> NSAttributedString {
+        let mutableAttributedString = NSMutableAttributedString(attributedString: self)
+        
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = bounds
+        
+        mutableAttributedString.insert(NSAttributedString(attachment: attachment), at: index)
+        
+        return mutableAttributedString
     }
 }
