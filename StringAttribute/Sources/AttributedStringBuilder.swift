@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct StringAttributeBuilder {
+public struct AttributedStringBuilder {
     fileprivate let attributedString: NSMutableAttributedString
     
     public init(string: String) {
@@ -20,47 +20,47 @@ public struct StringAttributeBuilder {
         self.attributedString = NSMutableAttributedString(attributedString: attributedString)
     }
     
-    public func apply(with attribute: StringAttribute) -> StringAttributeBuilder {
+    public func apply(with attribute: StringAttribute) -> AttributedStringBuilder {
         return apply(with: attribute, in: Range(uncheckedBounds: (lower: 0, upper: attributedString.length)))
     }
     
-    public func apply(with attributes: [StringAttribute]) -> StringAttributeBuilder {
+    public func apply(with attributes: [StringAttribute]) -> AttributedStringBuilder {
         return apply(with: attributes, in: Range(uncheckedBounds: (lower: 0, upper: attributedString.length)))
     }
     
-    public func apply(with attribute: StringAttribute, in range: Range<Int>) -> StringAttributeBuilder {
+    public func apply(with attribute: StringAttribute, in range: Range<Int>) -> AttributedStringBuilder {
         let nsRange = NSMakeRange(range.lowerBound, range.upperBound - range.lowerBound)
         attributedString.addAttributes(attribute.attributes, range: nsRange)
         return self
     }
     
-    public func apply(with attributes: [StringAttribute], in range: Range<Int>) -> StringAttributeBuilder {
+    public func apply(with attributes: [StringAttribute], in range: Range<Int>) -> AttributedStringBuilder {
         let nsRange = NSMakeRange(range.lowerBound, range.upperBound - range.lowerBound)
         attributes.forEach { attributedString.addAttributes($0.attributes, range: nsRange) }
         return self
     }
     
-    public func apply(with attribute: StringAttribute, in countableRange: CountableRange<Int>) -> StringAttributeBuilder {
+    public func apply(with attribute: StringAttribute, in countableRange: CountableRange<Int>) -> AttributedStringBuilder {
         let range: Range<Int> = Range(uncheckedBounds: (countableRange.lowerBound, countableRange.upperBound))
         return apply(with: attribute, in: range)
     }
     
-    public func apply(with attributes: [StringAttribute], in countableRange: CountableRange<Int>) -> StringAttributeBuilder {
+    public func apply(with attributes: [StringAttribute], in countableRange: CountableRange<Int>) -> AttributedStringBuilder {
         let range: Range<Int> = Range(uncheckedBounds: (countableRange.lowerBound, countableRange.upperBound))
         return apply(with: attributes, in: range)
     }
     
-    public func apply(with attribute: StringAttribute, in closeRange: ClosedRange<Int>) -> StringAttributeBuilder {
+    public func apply(with attribute: StringAttribute, in closeRange: ClosedRange<Int>) -> AttributedStringBuilder {
         let range: Range<Int> = Range(uncheckedBounds: (closeRange.lowerBound, closeRange.upperBound))
         return apply(with: attribute, in: range)
     }
     
-    public func apply(with attributes: [StringAttribute], in closeRange: ClosedRange<Int>) -> StringAttributeBuilder {
+    public func apply(with attributes: [StringAttribute], in closeRange: ClosedRange<Int>) -> AttributedStringBuilder {
         let range: Range<Int> = Range(uncheckedBounds: (closeRange.lowerBound, closeRange.upperBound))
         return apply(with: attributes, in: range)
     }
     
-    public func apply(with attribute: StringAttribute, for string: String, to position: StringMatchPositionType) -> StringAttributeBuilder {
+    public func apply(with attribute: StringAttribute, for string: String, to position: StringMatchPositionType) -> AttributedStringBuilder {
         position
             .convertRanges(
                 from: attributedString.string.ranges(of: string)
@@ -71,10 +71,30 @@ public struct StringAttributeBuilder {
         return self
     }
     
-    public func apply(with attributes: [StringAttribute], for string: String, to position: StringMatchPositionType) -> StringAttributeBuilder {
+    public func apply(with attributes: [StringAttribute], for string: String, to position: StringMatchPositionType) -> AttributedStringBuilder {
         attributes.forEach {
             _ = apply(with: $0, for: string, to: position)
         }
+        return self
+    }
+    
+    public func append(with image: UIImage?, bounds: CGRect = .zero) -> AttributedStringBuilder {
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = bounds
+        
+        attributedString.append(NSAttributedString(attachment: attachment))
+        
+        return self
+    }
+    
+    public func insert(with image: UIImage?, bounds: CGRect = .zero, at index: Int) -> AttributedStringBuilder {
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = bounds
+        
+        attributedString.insert(NSAttributedString(attachment: attachment), at: index)
+        
         return self
     }
     

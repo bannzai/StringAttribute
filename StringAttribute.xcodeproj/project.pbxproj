@@ -16,7 +16,7 @@
 		BAEC17831F18FA0400501BCF /* ParagraphStyleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC177A1F18FA0400501BCF /* ParagraphStyleBuilder.swift */; };
 		BAEC17841F18FA0400501BCF /* String+Attributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC177B1F18FA0400501BCF /* String+Attributed.swift */; };
 		BAEC17851F18FA0400501BCF /* StringAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC177C1F18FA0400501BCF /* StringAttribute.swift */; };
-		BAEC17861F18FA0400501BCF /* StringAttributeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC177D1F18FA0400501BCF /* StringAttributeBuilder.swift */; };
+		BAEC17861F18FA0400501BCF /* AttributedStringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC177D1F18FA0400501BCF /* AttributedStringBuilder.swift */; };
 		BAEC17881F19A2FD00501BCF /* String+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC17871F19A2FD00501BCF /* String+NSRange.swift */; };
 		BAEC178A1F19C85700501BCF /* StringMatchPositionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC17891F19C85700501BCF /* StringMatchPositionType.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +44,7 @@
 		BAEC177A1F18FA0400501BCF /* ParagraphStyleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphStyleBuilder.swift; sourceTree = "<group>"; };
 		BAEC177B1F18FA0400501BCF /* String+Attributed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Attributed.swift"; sourceTree = "<group>"; };
 		BAEC177C1F18FA0400501BCF /* StringAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttribute.swift; sourceTree = "<group>"; };
-		BAEC177D1F18FA0400501BCF /* StringAttributeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringAttributeBuilder.swift; sourceTree = "<group>"; };
+		BAEC177D1F18FA0400501BCF /* AttributedStringBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringBuilder.swift; sourceTree = "<group>"; };
 		BAEC17871F19A2FD00501BCF /* String+NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NSRange.swift"; sourceTree = "<group>"; };
 		BAEC17891F19C85700501BCF /* StringMatchPositionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatchPositionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +115,7 @@
 				BAEC177B1F18FA0400501BCF /* String+Attributed.swift */,
 				BAEC17871F19A2FD00501BCF /* String+NSRange.swift */,
 				BAEC177C1F18FA0400501BCF /* StringAttribute.swift */,
-				BAEC177D1F18FA0400501BCF /* StringAttributeBuilder.swift */,
+				BAEC177D1F18FA0400501BCF /* AttributedStringBuilder.swift */,
 				BAEC17891F19C85700501BCF /* StringMatchPositionType.swift */,
 			);
 			path = Sources;
@@ -238,7 +238,7 @@
 				BAEC17881F19A2FD00501BCF /* String+NSRange.swift in Sources */,
 				BAEC17821F18FA0400501BCF /* ParagraphStyle.swift in Sources */,
 				BAEC17841F18FA0400501BCF /* String+Attributed.swift in Sources */,
-				BAEC17861F18FA0400501BCF /* StringAttributeBuilder.swift in Sources */,
+				BAEC17861F18FA0400501BCF /* AttributedStringBuilder.swift in Sources */,
 				BAEC177F1F18FA0400501BCF /* NSAttributedString+StringAttributeBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
