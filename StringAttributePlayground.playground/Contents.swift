@@ -22,3 +22,11 @@ import StringAttribute
         ],
         for: "by bannzai"
 )
+
+"Hello, \nworld".attributed()
+    .apply(with: .paragraph(.complex([.alignment(.center), .lineSpacing(20)])))
+    .apply(with: .paragraph(.headIndent(20)), for: "world")
+
+
+
+
