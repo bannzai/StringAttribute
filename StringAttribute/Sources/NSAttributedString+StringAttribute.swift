@@ -52,10 +52,27 @@ public extension NSAttributedString {
 
 public extension NSAttributedString {
     public func append(with image: UIImage?, bounds: CGRect = .zero) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).append(with: image, bounds: bounds).build()
+        let mutableAttributedString = NSMutableAttributedString(attributedString: self)
+        
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = bounds
+        
+        mutableAttributedString.append(NSAttributedString(attachment: attachment))
+        
+        return mutableAttributedString
     }
     
     public func insert(with image: UIImage?, bounds: CGRect = .zero, at index: Int) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).insert(with: image, bounds: bounds, at: index).build()
+        let mutableAttributedString = NSMutableAttributedString(attributedString: self)
+        
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = bounds
+        
+        mutableAttributedString.insert(NSAttributedString(attachment: attachment), at: index)
+        
+        return mutableAttributedString
     }
+    
 }

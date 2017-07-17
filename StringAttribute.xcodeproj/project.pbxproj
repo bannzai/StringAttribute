@@ -10,7 +10,7 @@
 		BAEC17641F18F9D700501BCF /* StringAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEC175A1F18F9D700501BCF /* StringAttribute.framework */; };
 		BAEC17691F18F9D700501BCF /* StringAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC17681F18F9D700501BCF /* StringAttributeTests.swift */; };
 		BAEC176B1F18F9D700501BCF /* StringAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEC175D1F18F9D700501BCF /* StringAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BAEC177F1F18FA0400501BCF /* NSAttributedString+StringAttributeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC17761F18FA0400501BCF /* NSAttributedString+StringAttributeBuilder.swift */; };
+		BAEC177F1F18FA0400501BCF /* NSAttributedString+StringAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC17761F18FA0400501BCF /* NSAttributedString+StringAttribute.swift */; };
 		BAEC17801F18FA0400501BCF /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC17771F18FA0400501BCF /* Paragraph.swift */; };
 		BAEC17821F18FA0400501BCF /* ParagraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC17791F18FA0400501BCF /* ParagraphStyle.swift */; };
 		BAEC17831F18FA0400501BCF /* ParagraphStyleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC177A1F18FA0400501BCF /* ParagraphStyleBuilder.swift */; };
@@ -38,7 +38,7 @@
 		BAEC17631F18F9D700501BCF /* StringAttributeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringAttributeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEC17681F18F9D700501BCF /* StringAttributeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAttributeTests.swift; sourceTree = "<group>"; };
 		BAEC176A1F18F9D700501BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAEC17761F18FA0400501BCF /* NSAttributedString+StringAttributeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+StringAttributeBuilder.swift"; sourceTree = "<group>"; };
+		BAEC17761F18FA0400501BCF /* NSAttributedString+StringAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+StringAttribute.swift"; sourceTree = "<group>"; };
 		BAEC17771F18FA0400501BCF /* Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		BAEC17791F18FA0400501BCF /* ParagraphStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphStyle.swift; sourceTree = "<group>"; };
 		BAEC177A1F18FA0400501BCF /* ParagraphStyleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphStyleBuilder.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		BAEC17741F18FA0400501BCF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BAEC17761F18FA0400501BCF /* NSAttributedString+StringAttributeBuilder.swift */,
+				BAEC17761F18FA0400501BCF /* NSAttributedString+StringAttribute.swift */,
 				BAEC17771F18FA0400501BCF /* Paragraph.swift */,
 				BAEC17791F18FA0400501BCF /* ParagraphStyle.swift */,
 				BAEC177A1F18FA0400501BCF /* ParagraphStyleBuilder.swift */,
@@ -239,7 +239,7 @@
 				BAEC17821F18FA0400501BCF /* ParagraphStyle.swift in Sources */,
 				BAEC17841F18FA0400501BCF /* String+Attributed.swift in Sources */,
 				BAEC17861F18FA0400501BCF /* AttributedStringBuilder.swift in Sources */,
-				BAEC177F1F18FA0400501BCF /* NSAttributedString+StringAttributeBuilder.swift in Sources */,
+				BAEC177F1F18FA0400501BCF /* NSAttributedString+StringAttribute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

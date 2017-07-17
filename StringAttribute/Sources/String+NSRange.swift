@@ -9,23 +9,20 @@
 import Foundation
 
 extension String {
-    private func toNSRange(for range: Range<String.Index>) -> NSRange {
-        let lower = String.UTF16View.Index(range.lowerBound, within: utf16)
-        let upper = String.UTF16View.Index(range.upperBound, within: utf16)
-        return NSRange(
-            location: utf16.startIndex.distance(to: lower),
-            length: utf16.distance(from: lower, to: upper)
-        )
-    }
-    
-    func ranges(of string: String) -> [NSRange] {
+    func ranges(of string: String) -> [Range<Int>] {
         var decreasingSelf = self
-        var ranges: [NSRange] = []
+        var ranges: [Range<Int>] = []
         
         while let subStringRange = decreasingSelf.range(of: string) {
-            var nsRange = toNSRange(for: subStringRange)
-            nsRange.location += utf16.count - decreasingSelf.utf16.count
-            ranges.append(nsRange)
+            print("lower: \(subStringRange.lowerBound)")
+            print("upper: \(subStringRange.upperBound)")
+            let range: Range<Int> = Range(
+                uncheckedBounds: (
+                    lower: characters.distance(from: characters.startIndex, to: subStringRange.lowerBound),
+                    upper: characters.distance(from: characters.startIndex, to: subStringRange.upperBound)
+                )
+            )
+            ranges.append(range)
             
             decreasingSelf.removeSubrange(subStringRange)
         }

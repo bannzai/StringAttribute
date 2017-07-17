@@ -15,7 +15,7 @@ public enum StringMatchPositionType {
     case between(Range<Int>)
     case all
     
-    func convertRanges(from ranges: [NSRange]) -> [NSRange] {
+    func convertRanges(from ranges: [Range<Int>]) -> [Range<Int>] {
         switch self {
         case .first:
             return [ranges.first!]

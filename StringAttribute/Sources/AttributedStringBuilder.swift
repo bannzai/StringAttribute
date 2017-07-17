@@ -9,15 +9,21 @@
 import Foundation
 import UIKit
 
-public struct AttributedStringBuilder {
-    fileprivate let attributedString: NSMutableAttributedString
+public class AttributedStringBuilder {
+    fileprivate let attributedString: NSAttributedString
+    
+    fileprivate var styleAndRangePairs: [(style: StringAttribute, range: Range<Int>)] = []
+    
+    public var string: String {
+        return attributedString.string
+    }
     
     public init(string: String) {
-        attributedString = NSMutableAttributedString(string: string)
+        attributedString = NSAttributedString(string: string)
     }
     
     public init(attributedString: NSAttributedString) {
-        self.attributedString = NSMutableAttributedString(attributedString: attributedString)
+        self.attributedString = attributedString
     }
     
     public func apply(with attribute: StringAttribute) -> AttributedStringBuilder {
@@ -29,14 +35,12 @@ public struct AttributedStringBuilder {
     }
     
     public func apply(with attribute: StringAttribute, in range: Range<Int>) -> AttributedStringBuilder {
-        let nsRange = NSMakeRange(range.lowerBound, range.upperBound - range.lowerBound)
-        attributedString.addAttributes(attribute.attributes, range: nsRange)
+        styleAndRangePairs.append((style: attribute, range: range))
         return self
     }
     
     public func apply(with attributes: [StringAttribute], in range: Range<Int>) -> AttributedStringBuilder {
-        let nsRange = NSMakeRange(range.lowerBound, range.upperBound - range.lowerBound)
-        attributes.forEach { attributedString.addAttributes($0.attributes, range: nsRange) }
+        attributes.forEach { _ = apply(with: $0, in: range) }
         return self
     }
     
@@ -66,7 +70,7 @@ public struct AttributedStringBuilder {
                 from: attributedString.string.ranges(of: string)
             )
             .forEach { (range) in
-                attributedString.addAttributes(attribute.attributes, range: range)
+                _ = apply(with: attribute, in: range)
         }
         return self
     }
@@ -78,28 +82,22 @@ public struct AttributedStringBuilder {
         return self
     }
     
-    public func append(with image: UIImage?, bounds: CGRect = .zero) -> AttributedStringBuilder {
-        let attachment = NSTextAttachment()
-        attachment.image = image
-        attachment.bounds = bounds
-        
-        attributedString.append(NSAttributedString(attachment: attachment))
-        
-        return self
-    }
-    
-    public func insert(with image: UIImage?, bounds: CGRect = .zero, at index: Int) -> AttributedStringBuilder {
-        let attachment = NSTextAttachment()
-        attachment.image = image
-        attachment.bounds = bounds
-        
-        attributedString.insert(NSAttributedString(attachment: attachment), at: index)
-        
-        return self
-    }
-    
     public func build() -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(attributedString: self.attributedString)
+        
+        styleAndRangePairs.forEach {
+            attributedString.addAttributes($0.style.attributes, range: toNSRange(from: $0.range))
+        }
+        
         return attributedString
     }
+    
+    private func toNSRange(from range: Range<Int>) -> NSRange {
+        return NSRange(
+            location: range.lowerBound,
+            length: range.upperBound
+        )
+    }
+    
 }
 
