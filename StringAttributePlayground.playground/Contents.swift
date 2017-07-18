@@ -30,3 +30,8 @@ import StringAttribute
 
 
 
+
+"line space is 20px \nand this line head indent is 40px"
+    .attributed()
+    .apply(with: .paragraph(.lineSpacing(20)))
+    .apply(with: .paragraph(.headIndent(300)), for: "and")

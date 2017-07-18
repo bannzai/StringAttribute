@@ -41,7 +41,17 @@ class ViewController: UIViewController {
     
     func setupAttributedStrings() {
         attributedStrings = [
-            "Hello, world".attributed().apply(with: .foregroundColor(.red))
+            "simple red text".attributed().apply(with: .foregroundColor(.red)),
+            
+            "red is red, blue is blue"
+                .attributed()
+                .apply(with: .foregroundColor(.red), for: "red", to: .first)
+                .apply(with: .foregroundColor(.blue), for: "blue", to: .first),
+            
+            "line space is 20px \nand this line head indent is 40px"
+                .attributed()
+                .apply(with: .paragraph(.lineSpacing(20)))
+                .apply(with: .paragraph(.headIndent(40)), for: "and")
         ]
     }
 }

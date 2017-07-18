@@ -38,7 +38,7 @@ public struct ParagraphStyleBuilder {
             case .firstLineHeadIndent(let firstLineHeadIndent):
                 paragraphStyle.firstLineHeadIndent = firstLineHeadIndent
             case .headIndent(let headIndent):
-                paragraphStyle.headIndent = headIndent
+                paragraphStyle.firstLineHeadIndent = headIndent
             case .tailIndent(let tailIndent):
                 paragraphStyle.tailIndent = tailIndent
             case .lineBreakMode(let lineBreakMode):

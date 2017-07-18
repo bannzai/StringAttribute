@@ -16,5 +16,6 @@ class TableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         label.text = ""
+        label.numberOfLines = 0
     }
 }
