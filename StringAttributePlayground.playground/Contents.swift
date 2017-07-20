@@ -3,6 +3,26 @@
 import UIKit
 import StringAttribute
 
+let shadow = NSShadow()
+shadow.shadowOffset = CGSize(width: 5, height: 5)
+shadow.shadowBlurRadius = 5
+
+"19,800円"
+    .attributed()
+    .apply(with: [
+        .shadow(shadow),
+        .foregroundColor(UIColor(colorLiteralRed: 0.7, green: 0.2, blue: 0.23, alpha: 1)),
+        .strokeColor(.black),
+        .strokeWidth(-3),
+        .font(UIFont(name: "AmericanTypewriter-CondensedBold", size: 40.0)!),
+        .kern(-2),
+        .obliqueness(0.4)
+        ]
+    )
+    .apply(with: .font(UIFont(name: "AmericanTypewriter-CondensedBold", size: 40.0)!), for: "19,")
+    .apply(with: .kern(7), in: 5..<7)
+    .apply(with: .font(UIFont(name: "HiraginoSans-W6", size: 25.0)!), for: "円")
+
 "StringAttribute\nis simple to write about NSAttributedString\nby bannzai\n"
     .attributed()
     .apply(with: .font(UIFont.boldSystemFont(ofSize: 30)))
