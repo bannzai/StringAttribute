@@ -3,7 +3,7 @@
 import UIKit
 import StringAttribute
 
-"StringAttribute\nis simple to write for NSAttributedString\nby bannzai\n"
+"StringAttribute\nis simple to write about NSAttributedString\nby bannzai\n"
     .attributed()
     .apply(with: .font(UIFont.boldSystemFont(ofSize: 30)))
     .apply(with: .font(UIFont(name: "Zapfino", size: 30)!), in: 0..<6)
