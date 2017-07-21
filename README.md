@@ -33,7 +33,7 @@ label.attributedText = "Hello, \nworld".attributed()
 - [ ] Write test  
 - [ ] Add demo project  
 - [ ] Add playground sample
-- [ ] CocoaPods
+- [x] CocoaPods
 - [ ] Carthage
 
 # License 
