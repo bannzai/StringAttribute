@@ -9,66 +9,73 @@
 import UIKit
 import StringAttribute
 
+import UIKit
+
 class ViewController: UIViewController {
     
-    fileprivate let tableView: UITableView = UITableView(frame: .zero)
+    @IBOutlet private weak var label: UILabel!
     
-    var attributedStrings: [NSAttributedString] = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tableView)
-        
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 20).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor).isActive = true
-        
-        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-        setupAttributedStrings()
-        
-        tableView.reloadData()
+        setupLabel()
     }
     
-    func setupAttributedStrings() {
-        attributedStrings = [
-            "simple red text".attributed().apply(with: .foregroundColor(.red)),
-            
-            "red is red, blue is blue"
-                .attributed()
-                .apply(with: .foregroundColor(.red), for: "red", to: .first)
-                .apply(with: .foregroundColor(.blue), for: "blue", to: .first),
-            
-            "line space is 20px \nand this line head indent is 40px"
-                .attributed()
-                .apply(with: .paragraph(.lineSpacing(20)))
-                .apply(with: .paragraph(.headIndent(40)), for: "and")
+    
+    private func setupLabel() {
+        let attributeText = NSMutableAttributedString(string: "19,800円")
+        let textSize = attributeText.string.characters.count
+        
+        attributeText.addAttributes(baseAttributes, range: NSRange(location: 0, length: textSize))
+        attributeText.addAttributes(priceLargeAttributes, range: NSRange(location: 0, length: 3))
+        attributeText.addAttributes(priceSpaceAttributes, range: NSRange(location: 5, length: 2))
+        attributeText.addAttributes(yenAttributes, range: NSRange(location: 6, length: 1))
+        
+        label.attributedText = attributeText
+    
+    }
+    
+    
+    private var baseAttributes: [String: Any] {
+        let shadow = NSShadow()
+        shadow.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        shadow.shadowBlurRadius = 5.0
+        
+        let attributes: [String: Any] = [
+            NSForegroundColorAttributeName: #colorLiteral(red: 0.7803921569, green: 0.01960784314, blue: 0.02352941176, alpha: 1),
+            NSStrokeColorAttributeName: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
+            NSStrokeWidthAttributeName: -3.0,
+            NSShadowAttributeName: shadow,
+            NSFontAttributeName: UIFont(name: "AmericanTypewriter-CondensedBold", size: 40.0)!,
+            NSKernAttributeName: "hoge",
+            NSObliquenessAttributeName: 0.4, // 文字を斜めにする
         ]
-    }
-}
-
-
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return attributedStrings.count
+        
+        return attributes
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
-        cell.label.attributedText = attributedStrings[indexPath.row]
-        return cell
+    private var priceLargeAttributes: [String: Any] {
+        let attributes: [String: Any] = [
+            NSFontAttributeName: UIFont(name: "AmericanTypewriter-CondensedBold", size: 50.0)!,
+            ]
+        
+        return attributes
     }
-}
-
-extension ViewController: UITableViewDelegate {
     
+    private var priceSpaceAttributes: [String: Any] {
+        let attributes: [String: Any] = [
+            NSKernAttributeName: 7.0,
+            ]
+        
+        return attributes
+    }
+    
+    private var yenAttributes: [String: Any] {
+        let attributes: [String: Any] = [
+            NSFontAttributeName: UIFont(name: "HiraginoSans-W6", size: 25.0)!,
+            NSObliquenessAttributeName: 0.0,
+            ]
+        
+        return attributes
+    }
 }
