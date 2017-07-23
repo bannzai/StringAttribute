@@ -31,7 +31,7 @@ label.attributedText = "Hello, \nworld".attributed()
 
 # TODO
 - [ ] Write test  
-- [ ] Add demo project  
+- [x] Add demo project  
 - [ ] Add playground sample
 - [x] CocoaPods
 - [ ] Carthage
