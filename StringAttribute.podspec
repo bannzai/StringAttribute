@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.name = 'StringAttribute'
   s.version = '0.1.0'
   s.license = 'MIT'
-  s.homepage = 'https://github.com/bannzai/StringAttribute'
+  s.homepage = 'https://github.com/bannzai/StringAttribute/'
   s.summary = 'StringAttribute is simple to write about NSAttributedString'
   s.authors = { 'bannzai' => 'kingkong999yhirose@gmail.com' }
   s.source = { :git => 'https://github.com/bannzai/StringAttribute.git', :tag => s.version }
