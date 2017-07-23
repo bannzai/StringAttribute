@@ -20,7 +20,7 @@ public enum StringAttribute {
     case strokeColor(UIColor)
     case strokeWidth(Float)
     case shadow(NSShadow)
-    case textEffect 
+    case textEffect(NSString)
     case attachment(NSAttributedString)
     case link(URL)
     case baselineOffset(Float) 
