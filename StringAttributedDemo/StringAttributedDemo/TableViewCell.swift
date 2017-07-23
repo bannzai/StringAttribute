@@ -15,7 +15,10 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        contentView.backgroundColor = .darkGray
+        
         label.text = ""
         label.numberOfLines = 0
+        label.textColor = .white
     }
 }
