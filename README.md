@@ -26,7 +26,7 @@ label.attributedText = "Hello, world".attributed()
 ```swift
 label.attributedText = "Hello, \nworld".attributed()
     .apply(with: .paragraph(.complex([.alignment(.center), .lineSpacing(20)]))) // All line text alignment is center and line space is 20.
-    .apply(with: .paragraph(.headIndent(20)), for: "world")  // Containing "world", the head indent of line is 20px
+    .apply(with: .paragraph(.firstLineHeadIndent(20)), for: "world")  // Containing "world", the head indent of line is 20px
 ```
 
 # TODO
