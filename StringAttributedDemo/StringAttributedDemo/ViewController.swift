@@ -68,7 +68,7 @@ class ViewController: UIViewController {
             
             "Red is red, blue is blue"
                 .attributed()
-                .apply(with: .foregroundColor(.red), for: "red", to: .first)
+                .apply(with: .foregroundColor(.red), for: "Red", to: .first)
                 .apply(with: .foregroundColor(.blue), for: "blue", to: .first),
             
             "Line space is 80px \nand this line head indent is 40px"
