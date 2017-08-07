@@ -30,7 +30,7 @@ public enum StringAttribute {
     case expansion(Float) 
     case writingDirection(Int) 
     
-    var key: String {
+    public var key: String {
         switch self {
         case .font:
             return NSFontAttributeName
@@ -75,7 +75,7 @@ public enum StringAttribute {
         }
     }
     
-    var attributes: [String: Any] {
+    public var attributes: [String: Any] {
         switch self {
         case .font(let font):
             return [key: font]

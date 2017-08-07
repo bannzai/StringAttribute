@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C4B8CE51F37FD780069BD2E /* UISegmentedControl+StringAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4B8CE41F37FD780069BD2E /* UISegmentedControl+StringAttribute.swift */; };
 		BAEC17641F18F9D700501BCF /* StringAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEC175A1F18F9D700501BCF /* StringAttribute.framework */; };
 		BAEC17691F18F9D700501BCF /* StringAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC17681F18F9D700501BCF /* StringAttributeTests.swift */; };
 		BAEC176B1F18F9D700501BCF /* StringAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEC175D1F18F9D700501BCF /* StringAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C4B8CE41F37FD780069BD2E /* UISegmentedControl+StringAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+StringAttribute.swift"; sourceTree = "<group>"; };
 		BAEC175A1F18F9D700501BCF /* StringAttribute.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StringAttribute.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEC175D1F18F9D700501BCF /* StringAttribute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringAttribute.h; sourceTree = "<group>"; };
 		BAEC175E1F18F9D700501BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				BAEC177C1F18FA0400501BCF /* StringAttribute.swift */,
 				BAEC177D1F18FA0400501BCF /* AttributedStringBuilder.swift */,
 				BAEC17891F19C85700501BCF /* StringMatchPositionType.swift */,
+				6C4B8CE41F37FD780069BD2E /* UISegmentedControl+StringAttribute.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				BAEC17851F18FA0400501BCF /* StringAttribute.swift in Sources */,
 				BAEC17881F19A2FD00501BCF /* String+NSRange.swift in Sources */,
 				BAEC17821F18FA0400501BCF /* ParagraphStyle.swift in Sources */,
+				6C4B8CE51F37FD780069BD2E /* UISegmentedControl+StringAttribute.swift in Sources */,
 				BAEC17841F18FA0400501BCF /* String+Attributed.swift in Sources */,
 				BAEC17861F18FA0400501BCF /* AttributedStringBuilder.swift in Sources */,
 				BAEC177F1F18FA0400501BCF /* NSAttributedString+StringAttributeBuilder.swift in Sources */,
