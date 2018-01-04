@@ -1,0 +1,16 @@
+PODS:
+  - StringAttribute (0.2.0)
+
+DEPENDENCIES:
+  - StringAttribute (from `../`)
+
+EXTERNAL SOURCES:
+  StringAttribute:
+    :podspec: "../"
+
+SPEC CHECKSUMS:
+  StringAttribute: f2eab4c45ff0a3291d6978e2102ac150124ba599
+
+PODFILE CHECKSUM: 05eb14d921152d26fd41e3d32708a2b1264e20c1
+
+COCOAPODS: 1.2.0.beta.1
