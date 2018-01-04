@@ -28,54 +28,58 @@ public enum StringAttribute {
     case strikethroughColor(UIColor)
     case obliqueness(Float) 
     case expansion(Float) 
-    case writingDirection(Int) 
+    case writingDirection(Int)
     
-    public var key: String {
+    public var stringKey: String {
+        return key.rawValue
+    }
+    
+    public var key: NSAttributedStringKey {
         switch self {
         case .font:
-            return NSFontAttributeName
+            return NSAttributedStringKey.font
         case .paragraph:
-            return NSParagraphStyleAttributeName
+            return NSAttributedStringKey.paragraphStyle
         case .foregroundColor:
-            return NSForegroundColorAttributeName
+            return NSAttributedStringKey.foregroundColor
         case .backgroundColor:
-            return NSBackgroundColorAttributeName
+            return NSAttributedStringKey.backgroundColor
         case .ligature:
-            return NSLigatureAttributeName
+            return NSAttributedStringKey.ligature
         case .kern:
-            return NSKernAttributeName
+            return NSAttributedStringKey.kern
         case .strikethrough:
-            return NSStrikethroughStyleAttributeName
+            return NSAttributedStringKey.strikethroughColor
         case .underline:
-            return NSUnderlineStyleAttributeName
+            return NSAttributedStringKey.underlineStyle
         case .strokeColor:
-            return NSStrokeColorAttributeName
+            return NSAttributedStringKey.strokeColor
         case .strokeWidth:
-            return NSStrokeWidthAttributeName
+            return NSAttributedStringKey.strokeWidth
         case .shadow:
-            return NSShadowAttributeName
+            return NSAttributedStringKey.shadow
         case .textEffect:
-            return NSTextEffectAttributeName
+            return NSAttributedStringKey.textEffect
         case .attachment:
-            return NSAttachmentAttributeName
+            return NSAttributedStringKey.attachment
         case .link:
-            return NSLinkAttributeName
+            return NSAttributedStringKey.link
         case .baselineOffset:
-            return NSBaselineOffsetAttributeName
+            return NSAttributedStringKey.baselineOffset
         case .underlineColor:
-            return NSUnderlineColorAttributeName
+            return NSAttributedStringKey.underlineColor
         case .strikethroughColor:
-            return NSStrikethroughColorAttributeName
+            return NSAttributedStringKey.strikethroughColor
         case .obliqueness:
-            return NSObliquenessAttributeName
+            return NSAttributedStringKey.obliqueness
         case .expansion:
-            return NSExpansionAttributeName
+            return NSAttributedStringKey.expansion
         case .writingDirection:
-            return NSWritingDirectionAttributeName
+            return NSAttributedStringKey.writingDirection
         }
     }
     
-    public var attributes: [String: Any] {
+    public var attributes: [NSAttributedStringKey: Any] {
         switch self {
         case .font(let font):
             return [key: font]
