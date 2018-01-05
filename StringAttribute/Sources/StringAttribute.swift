@@ -79,6 +79,51 @@ public enum StringAttribute {
         }
     }
     
+    public var attributesForStringKey: [String: Any] {
+        switch self {
+        case .font(let font):
+            return [key.rawValue: font]
+        case .paragraph(let paragraph):
+            return [key.rawValue: paragraph.style()]
+        case .foregroundColor(let foregroundColor):
+            return [key.rawValue: foregroundColor]
+        case .backgroundColor(let backgroundColor):
+            return [key.rawValue: backgroundColor]
+        case .ligature(let ligature):
+            return [key.rawValue: NSNumber(value: ligature)]
+        case .kern(let kern):
+            return [key.rawValue: NSNumber(value: kern)]
+        case .strikethrough(let strikethrough):
+            return [key.rawValue: NSNumber(integerLiteral: strikethrough.rawValue)]
+        case .underline(let underline):
+            return [key.rawValue: NSNumber(integerLiteral: underline.rawValue)]
+        case .strokeColor(let strokeColor):
+            return [key.rawValue: strokeColor]
+        case .strokeWidth(let strokeWidth):
+            return [key.rawValue: strokeWidth]
+        case .shadow(let shadow):
+            return [key.rawValue: shadow]
+        case .textEffect(let textEffect):
+            return [key.rawValue: textEffect]
+        case .attachment(let attachment):
+            return [key.rawValue: attachment]
+        case .link(let link):
+            return [key.rawValue: link]
+        case .baselineOffset(let baselineOffset):
+            return [key.rawValue: NSNumber(value: baselineOffset)]
+        case .underlineColor(let underlineColor):
+            return [key.rawValue: underlineColor]
+        case .strikethroughColor(let strikethroughColor):
+            return [key.rawValue: strikethroughColor]
+        case .obliqueness(let obliqueness):
+            return [key.rawValue: NSNumber(value: obliqueness)]
+        case .expansion(let expansion):
+            return [key.rawValue: NSNumber(value: expansion)]
+        case .writingDirection(let writingDirection):
+            return [key.rawValue: writingDirection]
+        }
+    }
+    
     public var attributes: [NSAttributedStringKey: Any] {
         switch self {
         case .font(let font):
