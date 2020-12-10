@@ -34,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		6C4B8CE41F37FD780069BD2E /* UISegmentedControl+StringAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+StringAttribute.swift"; sourceTree = "<group>"; };
-		BACD20AF2581CD9F007C2129 /* StringAttributePlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StringAttributePlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BAEC175A1F18F9D700501BCF /* StringAttribute.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StringAttribute.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEC175D1F18F9D700501BCF /* StringAttribute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringAttribute.h; sourceTree = "<group>"; };
 		BAEC175E1F18F9D700501BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,7 +73,6 @@
 		BAEC17501F18F9D700501BCF = {
 			isa = PBXGroup;
 			children = (
-				BACD20AF2581CD9F007C2129 /* StringAttributePlayground.playground */,
 				BAEC175C1F18F9D700501BCF /* StringAttribute */,
 				BAEC17671F18F9D700501BCF /* StringAttributeTests */,
 				BAEC175B1F18F9D700501BCF /* Products */,
@@ -406,7 +404,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -427,7 +425,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
