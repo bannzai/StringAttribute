@@ -46,18 +46,6 @@ public struct AttributedStringBuilder {
     }
     
     @discardableResult
-    public func apply(_ attribute: StringAttribute, in countableRange: CountableRange<Int>) -> AttributedStringBuilder {
-        let range: Range<Int> = Range(uncheckedBounds: (countableRange.lowerBound, countableRange.upperBound))
-        return apply(attribute, in: range)
-    }
-    
-    @discardableResult
-    public func apply(_ attributes: [StringAttribute], in countableRange: CountableRange<Int>) -> AttributedStringBuilder {
-        let range: Range<Int> = Range(uncheckedBounds: (countableRange.lowerBound, countableRange.upperBound))
-        return apply(attributes, in: range)
-    }
-    
-    @discardableResult
     public func apply(_ attribute: StringAttribute, in closeRange: ClosedRange<Int>) -> AttributedStringBuilder {
         let range: Range<Int> = Range(uncheckedBounds: (closeRange.lowerBound, closeRange.upperBound))
         return apply(attribute, in: range)
