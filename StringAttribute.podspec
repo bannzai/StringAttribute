@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.authors = { 'bannzai' => 'kingkong999yhirose@gmail.com' }
   s.source = { :git => 'https://github.com/bannzai/StringAttribute.git', :tag => s.version }
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '10.0'
   s.swift_version = '5.2'
 
   s.source_files = 'StringAttribute/Sources/*.swift'
