@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/bannzai/StringAttribute.git', :tag => s.version }
 
   s.ios.deployment_target = '9.0'
+  s.swift_version = '5.2'
 
   s.source_files = 'StringAttribute/Sources/*.swift'
 end
