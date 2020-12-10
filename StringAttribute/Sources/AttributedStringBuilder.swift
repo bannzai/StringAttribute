@@ -23,12 +23,12 @@ public struct AttributedStringBuilder {
     
     @discardableResult
     public func apply(_ attribute: StringAttribute) -> AttributedStringBuilder {
-        return apply(with: attribute, in: Range(uncheckedBounds: (lower: 0, upper: attributedString.length)))
+        return apply(attribute, in: Range(uncheckedBounds: (lower: 0, upper: attributedString.length)))
     }
     
     @discardableResult
     public func apply(_ attributes: [StringAttribute]) -> AttributedStringBuilder {
-        return apply(with: attributes, in: Range(uncheckedBounds: (lower: 0, upper: attributedString.length)))
+        return apply(attributes, in: Range(uncheckedBounds: (lower: 0, upper: attributedString.length)))
     }
     
     @discardableResult
@@ -48,25 +48,25 @@ public struct AttributedStringBuilder {
     @discardableResult
     public func apply(_ attribute: StringAttribute, in countableRange: CountableRange<Int>) -> AttributedStringBuilder {
         let range: Range<Int> = Range(uncheckedBounds: (countableRange.lowerBound, countableRange.upperBound))
-        return apply(with: attribute, in: range)
+        return apply(attribute, in: range)
     }
     
     @discardableResult
     public func apply(_ attributes: [StringAttribute], in countableRange: CountableRange<Int>) -> AttributedStringBuilder {
         let range: Range<Int> = Range(uncheckedBounds: (countableRange.lowerBound, countableRange.upperBound))
-        return apply(with: attributes, in: range)
+        return apply(attributes, in: range)
     }
     
     @discardableResult
     public func apply(_ attribute: StringAttribute, in closeRange: ClosedRange<Int>) -> AttributedStringBuilder {
         let range: Range<Int> = Range(uncheckedBounds: (closeRange.lowerBound, closeRange.upperBound))
-        return apply(with: attribute, in: range)
+        return apply(attribute, in: range)
     }
     
     @discardableResult
     public func apply(_ attributes: [StringAttribute], in closeRange: ClosedRange<Int>) -> AttributedStringBuilder {
         let range: Range<Int> = Range(uncheckedBounds: (closeRange.lowerBound, closeRange.upperBound))
-        return apply(with: attributes, in: range)
+        return apply(attributes, in: range)
     }
     
     @discardableResult
@@ -84,7 +84,7 @@ public struct AttributedStringBuilder {
     @discardableResult
     public func apply(_ attributes: [StringAttribute], for string: String, to position: StringMatchPositionType) -> AttributedStringBuilder {
         attributes.forEach {
-            _ = apply(with: $0, for: string, to: position)
+            _ = apply($0, for: string, to: position)
         }
         return self
     }
