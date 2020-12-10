@@ -1,10 +1,5 @@
-//: Playground - noun: a place where people can play
-
 import UIKit
 import StringAttribute
-
-
-
 
 "StringAttribute\nis simple to write about NSAttributedString\nby bannzai\n"
     .attributed()
@@ -16,22 +11,14 @@ import StringAttribute
     .apply(.foregroundColor(.yellow), for: "t", to: .first)
     .apply(.foregroundColor(.red), for: "i", to: .first)
     .apply(.foregroundColor(.green), for: "b", to: .just(3))
-    .apply([.underline(.styleSingle), .foregroundColor(.magenta)], for: "bannzai")
+    .apply([.underline(.single), .foregroundColor(.magenta)], for: "bannzai")
     .apply([.foregroundColor(.orange), .font(UIFont.boldSystemFont(ofSize: 40))], for: "write")
-    .apply(
-        with: [
+    .apply([
             .paragraph(.firstLineHeadIndent(450)),
             .font(UIFont(name: "Zapfino", size: 20)!)
         ],
         for: "by bannzai"
 )
-
-
-
-
-
-
-
 
 "Hello, \nworld".attributed()
     .apply(.paragraph(.complex([.alignment(.center), .lineSpacing(20)])))
@@ -42,3 +29,4 @@ import StringAttribute
     .attributed()
     .apply(.paragraph(.lineSpacing(20)))
     .apply(.paragraph(.headIndent(300)), for: "and")
+
