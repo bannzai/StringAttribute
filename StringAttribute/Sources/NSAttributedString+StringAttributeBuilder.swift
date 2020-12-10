@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension NSAttributedString {
+extension NSAttributedString {
     public func apply(_ attribute: StringAttribute) -> NSAttributedString {
         return apply(attribute, in: Range(uncheckedBounds: (lower: 0, upper: length)))
     }
@@ -22,14 +22,6 @@ public extension NSAttributedString {
     }
     
     public func apply(_ attributes: [StringAttribute], in range: Range<Int>) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(attributes, in: range).build()
-    }
-    
-    public func apply(_ attribute: StringAttribute, in range: CountableRange<Int>) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(attribute, in: range).build()
-    }
-    
-    public func apply(_ attributes: [StringAttribute], in range: CountableRange<Int>) -> NSAttributedString {
         return AttributedStringBuilder(attributedString: self).apply(attributes, in: range).build()
     }
     
@@ -50,7 +42,7 @@ public extension NSAttributedString {
     }
 }
 
-public extension NSAttributedString {
+extension NSAttributedString {
     public func append(with image: UIImage?, bounds: CGRect = .zero) -> NSAttributedString {
         return AttributedStringBuilder(attributedString: self).append(with: image, bounds: bounds).build()
     }
