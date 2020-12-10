@@ -8,49 +8,41 @@
 
 import Foundation
 
-public extension NSAttributedString {
-    public func apply(with attribute: StringAttribute) -> NSAttributedString {
-        return apply(with: attribute, in: Range(uncheckedBounds: (lower: 0, upper: length)))
+extension NSAttributedString {
+    public func apply(_ attribute: StringAttribute) -> NSAttributedString {
+        return apply(attribute, in: Range(uncheckedBounds: (lower: 0, upper: length)))
     }
     
-    public func apply(with attributes: [StringAttribute]) -> NSAttributedString {
-        return apply(with: attributes, in: Range(uncheckedBounds: (lower: 0, upper: length)))
+    public func apply(_ attributes: [StringAttribute]) -> NSAttributedString {
+        return apply(attributes, in: Range(uncheckedBounds: (lower: 0, upper: length)))
     }
     
-    public func apply(with attribute: StringAttribute, in range: Range<Int>) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(with: attribute, in: range).build()
+    public func apply(_ attribute: StringAttribute, in range: Range<Int>) -> NSAttributedString {
+        return AttributedStringBuilder(attributedString: self).apply(attribute, in: range).build()
     }
     
-    public func apply(with attributes: [StringAttribute], in range: Range<Int>) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(with: attributes, in: range).build()
+    public func apply(_ attributes: [StringAttribute], in range: Range<Int>) -> NSAttributedString {
+        return AttributedStringBuilder(attributedString: self).apply(attributes, in: range).build()
     }
     
-    public func apply(with attribute: StringAttribute, in range: CountableRange<Int>) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(with: attribute, in: range).build()
+    public func apply(_ attribute: StringAttribute, in range: ClosedRange<Int>) -> NSAttributedString {
+        return AttributedStringBuilder(attributedString: self).apply(attribute, in: range).build()
     }
     
-    public func apply(with attributes: [StringAttribute], in range: CountableRange<Int>) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(with: attributes, in: range).build()
+    public func apply(_ attributes: [StringAttribute], in range: ClosedRange<Int>) -> NSAttributedString {
+        return AttributedStringBuilder(attributedString: self).apply(attributes, in: range).build()
     }
     
-    public func apply(with attribute: StringAttribute, in range: ClosedRange<Int>) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(with: attribute, in: range).build()
+    public func apply(_ attribute: StringAttribute, for string: String, to position: StringMatchPositionType = .all) -> NSAttributedString {
+        return AttributedStringBuilder(attributedString: self).apply(attribute, for: string, to: position).build()
     }
     
-    public func apply(with attributes: [StringAttribute], in range: ClosedRange<Int>) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(with: attributes, in: range).build()
-    }
-    
-    public func apply(with attribute: StringAttribute, for string: String, to position: StringMatchPositionType = .all) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(with: attribute, for: string, to: position).build()
-    }
-    
-    public func apply(with attributes: [StringAttribute], for string: String, to position: StringMatchPositionType = .all) -> NSAttributedString {
-        return AttributedStringBuilder(attributedString: self).apply(with: attributes, for: string, to: position).build()
+    public func apply(_ attributes: [StringAttribute], for string: String, to position: StringMatchPositionType = .all) -> NSAttributedString {
+        return AttributedStringBuilder(attributedString: self).apply(attributes, for: string, to: position).build()
     }
 }
 
-public extension NSAttributedString {
+extension NSAttributedString {
     public func append(with image: UIImage?, bounds: CGRect = .zero) -> NSAttributedString {
         return AttributedStringBuilder(attributedString: self).append(with: image, bounds: bounds).build()
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension String {
+extension String {
     public func attributed() -> NSAttributedString {
         return NSAttributedString(string: self)
     }
